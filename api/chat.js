@@ -49,8 +49,9 @@ export default async function handler(req, res) {
 
   } catch (error) {
 
-    res.status(500).json({
-      answer: "Ошибка сервера: " + error.message
+    res.status(200).json({
+    answer: data.candidates?.[0]?.content?.parts?.[0]?.text 
+    || JSON.stringify(data)
     });
 
   }
